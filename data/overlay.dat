@@ -1,0 +1,12 @@
+VN,1
+FN,overlay
+FT,webp
+FW,200
+FH,200
+BG,dark_gray
+#
+RE,20,20,40,40,red,1.0,red
+RE,10,10,60,60,blue,1.0,blue
+# move x-axis
+RE,80,10,60,60,blue,1.0,blue
+RE,90,20,40,40,red,1.0,red

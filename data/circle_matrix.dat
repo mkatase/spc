@@ -1,0 +1,12 @@
+VN,1
+FN,circle_matrix
+FT,webp
+FW,300
+FH,300
+BG,dark_gray
+#
+GR,@C1
+CI,0,10,20,orange,2.0
+GR,E
+#
+RP,@C1,3,3,50,50,60,30

@@ -1,0 +1,26 @@
+@note
+- Edit Time: 2026-04-12 First Edit
+- mdivide -l en -i ./docs/CHANGELOG.txt -o ./CHAGELOG.md
+@end
+@common
+# Changelog
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+@end
+#-------------------------------------------------------------------------------------
+@common
+## [0.1.0] - 2026-04-12
+### Added
+@end
+@en
+- New Release.
+A lightweight, text-based drawing tool for empirical shape rendering using an intuitive coordinate system.
+@end
+@jp
+- 新規リリース。直感的な座標系を用いて、簡易的に図形を描画するプログラム
+@end

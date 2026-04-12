@@ -1,0 +1,18 @@
+[package]
+name = "spc"
+version = "0.1.0"
+edition = "2024"
+
+authors = ["Michimoto Katase <mkatase@gmail.com>"]
+license = "MIT"
+description = "Survival Painter (SPC) is designed to render shapes like circles and rectangles using minimal code and concise commands."
+repository = "https://github.com/mkatase/spc"
+readme = "README.md"
+
+[dependencies]
+clap = { version = "4.6.0", features = ["derive"] }
+ab_glyph = "0.2.32"
+eframe = "0.33.3"
+egui_extras = { version = "0.33.3", features = ["all_loaders"] }
+image = { version = "0.25.10", features = ["png", "webp", "jpeg"] }
+imageproc = "0.26.1"

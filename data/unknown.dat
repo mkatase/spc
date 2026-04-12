@@ -1,0 +1,173 @@
+VN,1
+FN,unknown
+FT,webp
+FW,500
+FH,300
+BG,black
+# --- 1行目用：大文字パーツ ---
+GR,@T
+RE,0,30,30,5,white,1,white
+RE,12,0,5,30,white,1,white
+GR,E
+
+GR,@H
+RE,0,0,5,35,white,1,white
+RE,0,15,20,5,white,1,white
+RE,20,0,5,35,white,1,white
+GR,E
+
+GR,@A
+RE,0,0,5,30,white,1,white
+RE,25,0,5,30,white,1,white
+RE,5,30,20,5,white,1,white
+RE,5,15,20,5,white,1,white
+GR,E
+
+GR,@N
+RE,0,0,5,35,white,1,white
+RE,25,0,5,35,white,1,white
+RE,5,20,20,5,white,1,white
+GR,E
+
+GR,@K
+RE,0,0,5,35,white,1,white
+RE,5,15,15,5,white,1,white
+RE,20,20,5,15,white,1,white
+RE,20,0,5,15,white,1,white
+GR,E
+
+GR,@Y
+RE,0,20,5,15,white,1,white
+RE,25,20,5,15,white,1,white
+RE,5,15,20,5,white,1,white
+RE,12,0,5,15,white,1,white
+GR,E
+
+GR,@O
+RE,5,0,20,5,white,1,white
+RE,5,30,20,5,white,1,white
+RE,0,5,5,25,white,1,white
+RE,25,5,5,25,white,1,white
+GR,E
+
+GR,@U
+RE,0,5,5,30,white,1,white
+RE,25,5,5,30,white,1,white
+RE,5,0,20,5,white,1,white
+GR,E
+
+# --- 2行目用：小文字パーツ（識別性重視） ---
+# --- F (縦棒を左へオフセット) ---
+GR,@f
+RE,0,0,5,35,white,1,white     # 縦棒 (左端)
+RE,0,35,15,5,white,1,white    # 上の横棒
+RE,0,20,12,5,white,1,white    # 中の横棒
+GR,E
+
+GR,@o
+RE,0,0,20,20,white,1,white
+RE,5,5,10,10,black,1,black
+GR,E
+
+GR,@r
+RE,0,0,5,20,white,1,white
+RE,5,15,10,5,white,1,white
+GR,E
+
+# --- 隊員流・小文字の e ---
+GR,@e
+RE,0,15,15,5,white,5,white   # 上の横棒（太め = Width活用）
+RE,0,0,5,20,white,1,white    # 左の縦棒
+RE,0,0,15,5,white,1,white    # 下の横棒
+RE,12,0,4,12,white,1,white   # 右の縦棒（ここを調整して e っぽく）
+# 必要に応じて、ここで「空き」を作るために black で上書き
+GR,E
+## --- e (識別性重視) ---
+#GR,@e
+#RE,0,0,15,20,white,1,white     # 土台
+#RE,4,4,11,4,black,1,black      # 下の切り欠き（右に広げる）
+#RE,4,12,11,4,black,1,black     # 上の切り欠き（右に広げる）
+#RE,0,10,10,4,white,1,white     # 中央の「橋」を左から架ける
+#GR,E
+
+## --- a (識別性重視) ---
+#GR,@a
+#RE,0,0,12,20,white,1,white     # 土台
+#RE,3,4,6,12,black,1,black      # 中央をガッツリ抜く
+#RE,12,0,4,20,white,1,white     # 右の縦棒を最後に重ねて「足」にする
+#GR,E
+## --- e (横棒の重なりを再調整) ---
+#GR,@e
+#RE,0,0,15,20,white,1,white     # 土台
+#RE,4,4,7,4,black,1,black       # 下の穴 (識別性を出すため小さめに空ける)
+#RE,0,10,15,4,white,1,white     # 中央の横棒を最後にかぶせる
+#GR,E
+##GR,@e
+##RE,0,0,15,20,white,1,white
+##RE,0,5,10,5,black,1,black
+##RE,5,15,5,5,white,1,white
+##GR,E
+
+# --- a (縦棒を最優先に) ---
+GR,@a
+RE,0,0,12,18,white,1,white     # 土台
+RE,3,4,6,8,black,1,black       # 中抜き
+RE,12,0,4,20,white,1,white     # 右の「足」を一番上に重ねて強調
+GR,E
+#GR,@a
+#RE,0,0,15,20,white,1,white
+#RE,0,5,10,10,black,1,black
+#RE,10,0,5,20,white,1,white
+#GR,E
+
+GR,@d
+RE,10,0,5,30,white,1,white
+RE,0,0,10,20,white,1,white
+RE,5,5,5,10,black,1,black
+GR,E
+
+GR,@i
+RE,0,0,5,20,white,1,white
+RE,0,25,5,5,white,1,white
+GR,E
+
+GR,@n
+RE,0,0,5,20,white,1,white
+RE,5,15,10,5,white,1,white
+RE,15,0,5,20,white,1,white
+GR,E
+
+GR,@g
+RE,0,0,15,20,white,1,white
+RE,5,5,5,10,black,1,black
+RE,0,-10,15,5,white,1,white   # 下に突き出る尻尾
+RE,0,-10,5,10,white,1,white
+GR,E
+
+GR,@dot
+RE,0,0,5,5,white,1,white
+GR,E
+
+# --- 配置 ---
+# 1行目
+PL,@T,50,180
+PL,@H,90,180
+PL,@A,130,180
+PL,@N,170,180
+PL,@K,210,180
+PL,@Y,270,180
+PL,@O,310,180
+PL,@U,350,180
+
+# 2行目 (右にずらす演出)
+PL,@f,100,100
+PL,@o,125,100
+PL,@r,150,100
+PL,@r,190,100
+PL,@e,215,100
+PL,@a,240,100
+PL,@d,265,100
+PL,@i,295,100
+PL,@n,315,100
+PL,@g,345,100
+PL,@dot,370,100

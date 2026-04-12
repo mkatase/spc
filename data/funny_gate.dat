@@ -1,0 +1,25 @@
+VN,1
+#FI,200,300,webp,test3
+FN,funny_gate
+FT,webp
+FW,300
+FH,300
+BG,dark_gray
+#
+#PG,100,100,30,6,60.0,yellow,2.0,fill
+#
+#PG,100,100,30,6,60.0,yellow
+TE,50,200,Funny Gate,16.0,white
+#PG,100,100,20,6,60.0,white,2.0,fill
+GR,@N1
+PG,0,0,50,6,60.0,yellow
+PG,0,0,40,6,60.0,green,2.0,orange
+GR,E
+#
+GR,@P1
+RE,0,0,40,5,green,1.0,green
+GR,E
+#
+PL,@N1,100,100
+#
+PL,@P1,140,97.5

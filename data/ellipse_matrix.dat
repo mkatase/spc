@@ -1,0 +1,13 @@
+VN,1
+FN,line_matrix
+FT,webp
+FW,300
+FH,300
+BG,dark_gray
+#
+GR,@E1
+EC,50,50,30,10,red,2.0
+GR,E
+#
+#PL,@E1,0,0
+RP,@E1,2,2,50,50,60,30

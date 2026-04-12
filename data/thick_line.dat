@@ -1,0 +1,10 @@
+VN,1
+FN,thick_line
+FT,webp
+FW,300
+FH,300
+BG,dark_gray
+#
+LN,50,50,150,50,white
+LN,50,100,150,100,white,5.0
+#

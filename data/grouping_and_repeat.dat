@@ -1,0 +1,13 @@
+VN,1
+FN,grouping_and_placement
+FT,webp
+FW,200
+FH,200
+BG,dark_gray
+#
+GR,@G1
+PG,0,0,20,5,0.0,yellow,2.0,green
+GR,E
+#
+RP,@G1,3,4,30,30,40,40
+#

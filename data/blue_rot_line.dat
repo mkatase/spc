@@ -1,0 +1,12 @@
+VN,1
+FN,blue_rot_line
+FT,webp
+FW,300
+FH,300
+BG,dark_gray
+#
+RO,@L1,45
+LN,50,50,150,50,blue,3.0
+RO,E
+#
+PL,@L1,50,50

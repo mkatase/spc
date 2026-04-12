@@ -1,0 +1,20 @@
+VN,1
+FN,custom_color
+FT,webp
+FW,200
+FH,200
+#LC,deep_pink
+BG,dark_gray
+#
+RC,olive,#72640c
+RC,iris,#c7a5cc
+#
+RO,@R1,45
+TE,0,0,Iris (Custom Color),12.0,iris
+RO,E
+#
+PL,@R1,20,80
+#
+TE,20,40,Violet (Preserve),14.0,violet
+#
+TE,20,60,Olive (Custom Color),14.0,olive

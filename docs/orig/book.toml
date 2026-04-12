@@ -1,0 +1,21 @@
+#-----------------------------------------
+@note
+- mutilingual book.toml
+@end
+@common
+[book]
+title = "Survival Painter (SPC) Documentation"
+authors = [ "Michimoto Katase" ]
+@end
+@en
+language = "en"
+
+@end
+@jp
+language = "jp"
+
+@end
+@common
+[output.html]
+git-repository-url = "https://github.com/mkatase/spc"
+@end
