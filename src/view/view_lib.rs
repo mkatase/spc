@@ -70,41 +70,33 @@ impl eframe::App for SpcApp {
     }
 }
 
-//impl SpcPainter for egui::Painter {
 impl SpcExecutor for egui::Painter {
     fn draw_line(&mut self, data: canvas_lib::SpcLine, 
         state: &canvas_lib::CanvasState, ctx: &canvas_lib::DrawContext) {
         let (pp1, pp2, stroke_rgba, w0) = data.resolve(state, ctx);
-        // 🚩 偵察：計算後の座標と、基準となる高さを出力
-        println!(">>> [DEBUG LINE] h:{} | p1:{:?}, p2:{:?} | color:{:?}", state.height, pp1, pp2, stroke_rgba);
+        // println!(">>> [DEBUG LINE] h:{} | p1:{:?}, p2:{:?} | color:{:?}", state.height, pp1, pp2, stroke_rgba);
         let p1 = egui::pos2(pp1[0], pp1[1]);
         let p2 = egui::pos2(pp2[0], pp2[1]);
 
         let stroke_color = egui::Color32::from_rgba_unmultiplied(
             stroke_rgba[0], stroke_rgba[1], stroke_rgba[2], stroke_rgba[3]
         );
-        //let co = canvas_color::get_color(&c0);
         let st = egui::Stroke{width: w0, color:stroke_color};
         self.line_segment([p1, p2], st);
     }
 
-    //fn spc_circle(&mut self, data: canvas_lib::SpcCircle, 
     fn draw_circle(&mut self, data: canvas_lib::SpcCircle, 
         state: &canvas_lib::CanvasState, ctx: &canvas_lib::DrawContext) {
         let (cce, ra, stroke_rgba, w0, fill_rgba) = data.resolve(state, ctx);
-        // 🚩 偵察：円の中心座標
         //println!(">>> [DEBUG CIRCLE] center:{:?}, radius:{} | color:{} | bool:{}", cce, ra, c0, b0);
         //println!(">>> [DEBUG CIRCLE] h:{} | center:{:?}, radius:{} | color:{}", state.height, cce, ra, c0);
         let ce = egui::pos2(cce[0], cce[1]);
 
-        // 🚩 c0 ではなく stroke_rgba を Color32 に変換
-        // ※ get_color は [u8; 4] を受け取れるように改造済みという前提
         let stroke_color = egui::Color32::from_rgba_unmultiplied(
             stroke_rgba[0], stroke_rgba[1], stroke_rgba[2], stroke_rgba[3]
         );
         let st = egui::Stroke{width: w0, color: stroke_color};
 
-        // 🚩 b0（フラグ）ではなく、fill_rgba のアルファ値で判定！
         if fill_rgba[3] > 0 {
             let fill_color = egui::Color32::from_rgba_unmultiplied(
                 fill_rgba[0], fill_rgba[1], fill_rgba[2], fill_rgba[3]
@@ -112,7 +104,6 @@ impl SpcExecutor for egui::Painter {
             self.circle_filled(ce, ra, fill_color);
         }
     
-        // 枠線を描画
         self.circle_stroke(ce, ra, st);
     }
 
@@ -133,33 +124,27 @@ impl SpcExecutor for egui::Painter {
             color: eframe::epaint::ColorMode::Solid(stroke_color),
             kind: egui::StrokeKind::Outside,
         };
-        // 🚩 2. PathShape として Shape を構築する
         let shape = egui::Shape::Path(egui::epaint::PathShape {
             points,
-            closed: false, // 🚩 true にすると扇形（Pie）になります！
+            closed: false, // true is Pie
             fill: egui::Color32::TRANSPARENT,
             stroke: st,
         });
         self.add(shape);
         self.circle_filled(cce.into(), 2.0, stroke_color);
-        //self.circle_filled(cce.into(), 2.0, egui::Color32::RED);
     }
 
     fn draw_ellipse(&mut self, data: canvas_lib::SpcEllipse, 
         state: &canvas_lib::CanvasState, ctx: &canvas_lib::DrawContext) {
-        // 🚩 1. 円弧上の点を生成する（細かく刻むほど滑らかに！）
         let (cce, ra, stroke_rgba, w0, fill_rgba) = data.resolve(state, ctx);
-        println!(">>> [DEBUG ELLIPSE] cen:{:?} | radius:{:?}, color:{:?}", cce, ra, stroke_rgba);
+        //println!(">>> [DEBUG ELLIPSE] cen:{:?} | radius:{:?}, color:{:?}", cce, ra, stroke_rgba);
         let pp = egui::pos2(cce[0], cce[1]);
         let rr = Vec2{x: ra[0], y: ra[1]};
-        //let sk = egui::StrokeKind::Outside;
-        //let co = canvas_color::get_color(&c0);
         let stroke_color = egui::Color32::from_rgba_unmultiplied(
             stroke_rgba[0], stroke_rgba[1], stroke_rgba[2], stroke_rgba[3]
         );
         let st = egui::Stroke{width: w0, color:stroke_color};
-        //let cf = if b0 { co } else { egui::Color32::TRANSPARENT };
-        // 🚩 ここで Color32 に変換！！
+        // for Color32
         let fill_color = egui::Color32::from_rgba_unmultiplied(
             fill_rgba[0], fill_rgba[1], fill_rgba[2], fill_rgba[3]
         );
@@ -175,9 +160,9 @@ impl SpcExecutor for egui::Painter {
 
     fn draw_rect(&mut self, data: canvas_lib::SpcRect, 
         state: &canvas_lib::CanvasState, ctx: &canvas_lib::DrawContext) {
-        println!("--- draw_rect in view_lib.rs ---");
+        //println!("--- draw_rect in view_lib.rs ---");
         let (pp1, pp2, stroke_rgba, w0, fill_rgba) = data.resolve(state, ctx);
-        println!(">>> [DEBUG RECT] min:{:?} | max:{:?}, color:{:?}", pp1, pp2, stroke_rgba);
+        //println!(">>> [DEBUG RECT] min:{:?} | max:{:?}, color:{:?}", pp1, pp2, stroke_rgba);
         let p1 = egui::pos2(pp1[0], pp1[1]);
         let p2 = egui::pos2(pp2[0], pp2[1]);
         let rec = egui::Rect{min: p1, max: p2};
@@ -202,20 +187,18 @@ impl SpcExecutor for egui::Painter {
 
     fn draw_polygon(&mut self, data: canvas_lib::SpcPolygon,
         state: &canvas_lib::CanvasState, ctx: &canvas_lib::DrawContext) {
-        println!("--- draw_polygon in view_lib.rs ---");
+        //println!("--- draw_polygon in view_lib.rs ---");
         let (cce, r, v, o, stroke_rgba, w0, fill_rgba) = data.resolve(state, ctx);
         let coords = canvas_calc::poly_points(cce, r, v, o);
         let points: Vec<egui::Pos2> = coords.into_iter()
             .map(|[x, y]| egui::pos2(x, y))
             .collect();
 
-        //let co = canvas_color::get_color(&c0);
         let stroke_color = egui::Color32::from_rgba_unmultiplied(
             stroke_rgba[0], stroke_rgba[1], stroke_rgba[2], stroke_rgba[3]
         );
         let st = egui::Stroke{width: w0, color:stroke_color};
 
-        //let fill_color = if b0 { co } else { egui::Color32::TRANSPARENT };
         let fill_color = egui::Color32::from_rgba_unmultiplied(
             fill_rgba[0], fill_rgba[1], fill_rgba[2], fill_rgba[3]
         );
@@ -226,18 +209,17 @@ impl SpcExecutor for egui::Painter {
             st
         );
         self.add(shape);
-        //self.convex_polygon(points, co, fill_color, sk);
     }
 
     fn draw_text(&mut self, data: canvas_lib::SpcText,
         state: &canvas_lib::CanvasState, ctx: &canvas_lib::DrawContext) {
-        println!("--- draw_text in view_lib.rs ---");
+        //println!("--- draw_text in view_lib.rs ---");
 
         let (pos, color_rgba, size) = data.resolve(state, ctx);
         let color = egui::Color32::from_rgba_unmultiplied(
             color_rgba[0], color_rgba[1], color_rgba[2], color_rgba[3]);
     
-        // とりあえず標準フォントで描画
+        // default font
         self.text(
             egui::pos2(pos[0], pos[1]),
             egui::Align2::LEFT_TOP,
