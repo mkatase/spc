@@ -15,4 +15,4 @@ ab_glyph = "0.2.32"
 eframe = "0.33.3"
 egui_extras = { version = "0.33.3", features = ["all_loaders"] }
 image = { version = "0.25.10", features = ["png", "webp", "jpeg"] }
-imageproc = "0.26.1"
+imageproc = "0.26.2"
