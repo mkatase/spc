@@ -1,5 +1,6 @@
 @note
-- Edit Date: 2026-05-16 Update tool version
+- Edit Date: 2026-05-17 Update kernel version
+- Edit Date: 2026-05-16 Update kernel version
 - Edit Date: 2026-05-12 Update tool version
 - Edit Date: 2026-04-09 First Edit
 - mdivide -l en -i ./docs/README.txt -o README-en.md
@@ -34,7 +35,7 @@ GUIツールを立ち上げるまでもない「ちょっとした図案」を�
 ## 環境
 @end
 @common
-- cargo 1.95.0 on Fedora 44 (7.0.7-200)
+- cargo 1.95.0 on Fedora 44 (7.0.8-200)
 
 @end
 #-----------------------------------------------------------------------
