@@ -45,9 +45,6 @@ impl eframe::App for SpcApp {
             }
         });
         }
-        egui::CentralPanel::default().show(ctx, |ui| {
-            view_core::draw(self, ui);
-        });
 
         if self.mode == "run" && !self.is_captured {
             ctx.send_viewport_cmd(
@@ -67,6 +64,10 @@ impl eframe::App for SpcApp {
         if exit_req {
             ctx.send_viewport_cmd(egui::ViewportCommand::Close);
         }
+    }
+
+    fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
+        view_core::draw(self, ui);
     }
 }
 
@@ -154,6 +155,7 @@ impl SpcExecutor for egui::Painter {
             radius: rr,
             fill: fill_color,
             stroke: st,
+            angle: 0.0,
         };
         self.add(shape);
     }

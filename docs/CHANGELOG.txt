@@ -14,6 +14,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 @end
 #-------------------------------------------------------------------------------------
 @common
+## [0.2.0] - 2026-05-21
+### Changed
+@end
+@en
+- Upgraded GUI backend `eframe` / `egui` to 0.34.
+- Migrated rendering logic into the newly required `App::ui` method to adapt to framework restructuring.
+- Addressed internal structure updates in `EllipseShape` to maintain rigid drawing accuracy.
+
+@end
+@jp
+- GUIバックエンドである `eframe` / `egui` を 0.34 にアップデート
+- フレームワークの構造変更に伴い、描画ロジックを新設された `App::ui` メソッドへと移行
+- `EllipseShape` の内部構造の変更に対応し、従来通りの描画の正確性を維持
+
+@end
+#-------------------------------------------------------------------------------------
+@common
 ## [0.1.0] - 2026-04-12
 ### Added
 @end
