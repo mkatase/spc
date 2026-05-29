@@ -1,4 +1,5 @@
 @note
+- Edit Date: 2026-05-29 Update kernel version
 - Edit Date: 2026-05-27 Update kernel version
 - Edit Date: 2026-05-22 Update kernel version
 - Edit Date: 2026-05-21 Update kernel version
@@ -39,7 +40,7 @@ GUIツールを立ち上げるまでもない「ちょっとした図案」を�
 ## 環境
 @end
 @common
-- cargo 1.95.0 on Fedora 44 (7.0.10-200)
+- cargo 1.95.0 on Fedora 44 (7.0.10-201)
 
 @end
 #-----------------------------------------------------------------------
@@ -166,7 +167,7 @@ CI,200,200,40
 @end
 @common
 ```bash
-$ $ cat data/easy2see.dat 
+$ cat data/easy2see.dat 
 CI,200,200,40,white,2.0
 ```
 ![Easy to see](./output/easy2see.webp)

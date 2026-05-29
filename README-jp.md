@@ -12,7 +12,7 @@ Survival Painter (SPC) は、円や矩形といった図形を、限りなく少
 GUIツールを立ち上げるまでもない「ちょっとした図案」を、テキストエディタだけで構築するための、エンジニア向けのドローイングツールです。
 
 ## 環境
-- cargo 1.95.0 on Fedora 44 (7.0.10-200)
+- cargo 1.95.0 on Fedora 44 (7.0.10-201)
 
 ## 構築とインストール
 
@@ -60,7 +60,7 @@ CI,200,200,40
 ** It's hard to see... **
 ### <a id="usage2"></a>見易く（円）
 ```bash
-$ $ cat data/easy2see.dat 
+$ cat data/easy2see.dat 
 CI,200,200,40,white,2.0
 ```
 ![Easy to see](./output/easy2see.webp)
