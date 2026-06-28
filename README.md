@@ -12,7 +12,7 @@ Survival Painter (SPC) is designed to render shapes like circles and rectangles 
 It is a drawing tool for developers who prefer staying in their text editor to construct quick diagrams or pixel-perfect logic without launching heavy GUI applications.
 
 ## Environment
-- cargo 1.96.0 on Fedora 44 (7.0.12-201)
+- cargo 1.96.0 on Fedora 44 (7.0.13-200)
 
 ## Build and Install
 
