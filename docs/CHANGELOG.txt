@@ -1,4 +1,6 @@
 @note
+- Edit Time: 2026-07-03 eframe update 0.35
+- Edit Time: 2026-05-21 eframe update 0.34
 - Edit Time: 2026-04-12 First Edit
 - mdivide -l en -i ./docs/CHANGELOG.txt -o ./CHAGELOG.md
 @end
@@ -10,6 +12,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+@end
+#-------------------------------------------------------------------------------------
+@common
+## [0.3.0] - 2026-07-03
+### Changed
+@end
+@en
+- Upgraded GUI backend `eframe` / `egui` to 0.35.
+
+@end
+@jp
+- GUIバックエンドである `eframe` / `egui` を 0.35 にアップデート
 
 @end
 #-------------------------------------------------------------------------------------

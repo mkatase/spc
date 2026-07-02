@@ -18,8 +18,10 @@ jobs:
           git init
           git branch -M main
           git remote add origin https://github.com/${{ github.repository }}.git
-          git config --local http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n x-access-token:${{ secrets.GITHUB_TOKEN }} | base64 )"
-          git fetch --depth=1 origin ${{ github.ref }}
+          git fetch --depth=1 "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" ${{ github.ref }}
+          
+          #git config --local http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n x-access-token:${{ secrets.GITHUB_TOKEN }} | base64 )"
+          #git fetch --depth=1 origin ${{ github.ref }}
           git checkout FETCH_HEAD
 
       - name: Setup Rust (Node Free)

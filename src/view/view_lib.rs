@@ -33,7 +33,8 @@ impl SpcApp {
 }
 
 impl eframe::App for SpcApp {
-    fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+    fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
+        let ctx = ui.ctx();
         let mut exit_req = false;
 
         if self.mode == "run" && self.is_captured {
@@ -64,9 +65,7 @@ impl eframe::App for SpcApp {
         if exit_req {
             ctx.send_viewport_cmd(egui::ViewportCommand::Close);
         }
-    }
 
-    fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
         view_core::draw(self, ui);
     }
 }
