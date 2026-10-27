@@ -48,10 +48,16 @@ impl eframe::App for SpcApp {
         }
 
         if self.mode == "run" && !self.is_captured {
-            ctx.send_viewport_cmd(
-                egui::ViewportCommand::Screenshot(egui::UserData::default()));
+            //ctx.send_viewport_cmd(egui::ViewportCommand::Screenshot);
+            let output_path = self.output_path.clone();
+            ctx.send_viewport_cmd(egui::ViewportCommand::Screenshot(
+                    egui::ScreenshotCallback::new(move |image| {
+                    file::save_image(&image, &output_path);
+                    println!("Close...");
+            })));
             self.is_captured = true;
         }
+            /*
             ctx.input(|i| {
                 for event in &i.raw.events {
                     if let egui::Event::Screenshot { image, .. } = event {
@@ -61,7 +67,7 @@ impl eframe::App for SpcApp {
                     }
                 }
             });
-
+            */
         if exit_req {
             ctx.send_viewport_cmd(egui::ViewportCommand::Close);
         }
