@@ -1,4 +1,5 @@
 @note
+- Edit Date: 2026-11-17 Update kernel version
 - Edit Date: 2026-11-13 Update tool version
 - Edit Date: 2026-11-10 Update kernel version
 - Edit Date: 2026-11-04 Update kernel version
@@ -78,7 +79,7 @@ GUIツールを立ち上げるまでもない「ちょっとした図案」を�
 ## 環境
 @end
 @common
-- cargo 1.100.0 on Fedora 45 (7.3.3-300)
+- cargo 1.100.0 on Fedora 45 (7.3.4-300)
 
 @end
 #-----------------------------------------------------------------------
